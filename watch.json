@@ -1,0 +1,18 @@
+{
+  "install": {
+    "include": [
+      "^package\\.json$",
+      "^\\.env$"
+    ]
+  },
+  "restart": {
+    "include": [
+      "^tsconfig\\.json$",
+      "^server\\.ts$",
+      "routes\\*\\.ts$",
+      "\\.ts$",
+      "\\.scss$"
+    ]
+  },
+  "throttle": 2500
+}
