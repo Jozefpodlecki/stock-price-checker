@@ -1,0 +1,43 @@
+extends layout.pug
+    
+block body
+  .container
+    h1.headline Information Security and Quality Assurance Projects - #{title}
+    
+    .item
+      h3 Usage
+      div
+        .header
+          span.httpMethod.httpMethod--get GET
+          span.httpUrl #{url}api/stock-prices
+        form.form
+          input.field(required, type="text", name="stock", placeholder="enter stock")
+          label.checkbox-container I like this stock!
+            input(type="checkbox", name="like")
+            span.checkbox-checkmark
+          input.submitButton(type="submit" value="Get Price")
+        #stockResult
+      div
+        .header
+          span.httpMethod.httpMethod--get GET
+          span.httpUrl #{url}api/stock-prices
+        form.form
+          input.field(required, type="text", name="firstStock", placeholder="enter first stock")
+          input.field(required, type="text", name="secondStock", placeholder="enter second stock")
+          label.checkbox-container I like these stocks!
+            input(type="checkbox", name="like")
+            span.checkbox-checkmark
+          input.submitButton(type="submit" value="Get Price")
+        #stocksResult
+      
+    .item
+      h3 User Story
+      ol
+        li Set the content security policies to only allow loading of scripts and CSS from your server.
+        li I can GET /api/stock-prices with form data containing a Nasdaq stock ticker and recieve back an object stockData.
+        li In stockData, I can see the stock (the ticker as a string), price (decimal in string format), and likes (int).
+        li I can also pass along the field like as true (boolean) to have my like added to the stock(s). Only 1 like per IP should be accepted.
+        li If I pass along 2 stocks, the return object will be an array with information about both stocks. Instead of likes, it will display rel_likes (the difference between the likes) on both.
+        li A good way to receive current prices is through our stock price proxy (replacing 'GOOG' with your stock symbol): https://repeated-alpaca.glitch.me/v1/stock/GOOG/quote
+        li All 5 functional tests are complete and passing.
+        

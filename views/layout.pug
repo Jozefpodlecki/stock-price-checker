@@ -1,0 +1,33 @@
+doctype html
+html
+  head
+    title=title
+    link(rel="shortcut icon"
+        href="https://cdn.hyperdev.com/us-east-1%3A52a203ff-088b-420f-81be-45bf559d01b1%2Ffavicon.ico"
+        type="image/x-icon")
+    script(src="https://kit.fontawesome.com/1f738126a3.js",
+      crossorigin="anonymous")
+    link(href="https://fonts.googleapis.com/css?family=Gelasio|Oswald:700&display=swap",
+      rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css?family=Roboto"
+        rel="stylesheet"
+        type="text/css")
+    link(href="style/style.css"
+        rel="stylesheet"
+        type="text/css")
+  body
+    .root
+      .container
+        block body
+    
+      include footer.pug
+    link(rel="stylesheet"
+      href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/default.min.css")
+    script(src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js")
+    script.
+      window.url = '#{url}'
+    script(src="script.js")
+    script.
+      hljs.initHighlightingOnLoad()
+    block scripts
+      
